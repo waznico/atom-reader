@@ -1,3 +1,5 @@
+![Go](https://github.com/waznico/atom-reader/workflows/Go/badge.svg?branch=master)
+
 # Atom Reader
 A simple Atom RSS reader as test project to fetch latest news of heise
 

@@ -1,0 +1,12 @@
+{
+    "feeds": [
+        {
+            "name": "heise News",
+            "uri": "https://www.heise.de/rss/heise-atom.xml"
+        },
+        {
+            "name": "heise Developer",
+            "uri": "https://www.heise.de/developer/rss/news-atom.xml"
+        }
+    ]
+}

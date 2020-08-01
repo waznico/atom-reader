@@ -13,12 +13,12 @@ var rootCmd = &cobra.Command{
 	Long:  "A command to read the last 10 atom feed entries",
 }
 
-var lsCmd = &cobra.Command{
-	Use:   "ls",
-	Short: "List news",
-	Long:  "Lists the last 10 news of the feed",
+var lsaCmd = &cobra.Command{
+	Use:   "lsa",
+	Short: "List all news",
+	Long:  "Lists the last 10 news of all feeds",
 	Run: func(cmd *cobra.Command, args []string) {
-		list()
+		listAll()
 	},
 }
 
@@ -33,7 +33,7 @@ var describeCmd = &cobra.Command{
 
 //Exec execute function for commands
 func Exec() {
-	rootCmd.AddCommand(lsCmd)
+	rootCmd.AddCommand(lsaCmd)
 	rootCmd.AddCommand(describeCmd)
 	err := rootCmd.Execute()
 	if err != nil {

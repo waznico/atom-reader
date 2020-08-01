@@ -35,3 +35,9 @@ jobs:
 
     - name: Test
       run: go test -v ./cmd
+    
+    - name: Publish
+      uses: actions/upload-artifact@v2
+      with:
+        name: atom-reader
+        path: /home/runner/work/atom-reader

@@ -23,11 +23,11 @@ var lsCmd = &cobra.Command{
 }
 
 var describeCmd = &cobra.Command{
-	Use:   "describe [id]",
+	Use:   "describe [alias] [id]",
 	Short: "Shows details for an article",
 	Long:  "Shows more details to an article",
 	Run: func(cmd *cobra.Command, args []string) {
-		describe(args[0])
+		describe(args[0], args[1])
 	},
 }
 

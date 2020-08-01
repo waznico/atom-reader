@@ -12,8 +12,9 @@ type Feeds struct {
 
 // Feed struct contains the name and the uri of the feed
 type Feed struct {
-	Name string `json:"name"`
-	URI  string `json:"uri"`
+	Alias string `json:"alias"`
+	Name  string `json:"name"`
+	URI   string `json:"uri"`
 }
 
 // Convert converts the input byte array into a Feeds struct if possible
@@ -33,7 +34,8 @@ func SetDefaults() Feeds {
 	var feeds Feeds
 	var defaultFeed Feed
 
-	defaultFeed.Name = "heise"
+	defaultFeed.Alias = "heise_news"
+	defaultFeed.Name = "heise News"
 	defaultFeed.URI = "https://www.heise.de/rss/heise-atom.xml"
 
 	feeds.Feeds = make([]Feed, 1)

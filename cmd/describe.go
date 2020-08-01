@@ -5,11 +5,27 @@ import (
 	"time"
 
 	"github.com/mmcdole/gofeed"
+	"github.com/waznico/atom-reader/internal/pkg/config"
 )
 
-func describe(id string) {
+func describe(alias string, id string) {
+	var fc config.Config
+	fc.LoadConfig()
+
+	var feedURI string
+	for _, fi := range fc.Feeds.Feeds {
+		if fi.Alias == alias {
+			feedURI = fi.URI
+		}
+	}
+
+	if len(feedURI) == 0 {
+		fmt.Printf("No feed to alias %v was found!\n", alias)
+		return
+	}
+
 	fp := gofeed.NewParser()
-	feed, err := fp.ParseURL("https://www.heise.de/rss/heise-atom.xml")
+	feed, err := fp.ParseURL(feedURI)
 	if err != nil {
 		fmt.Println("Feed couldn't be reached. Please check your network connection and try again.")
 	}

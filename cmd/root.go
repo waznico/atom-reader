@@ -22,6 +22,15 @@ var lsaCmd = &cobra.Command{
 	},
 }
 
+var lsCmd = &cobra.Command{
+	Use:   "ls",
+	Short: "Lists news of the given feed",
+	Long:  "Lists the last given amount of news of the given feed",
+	Run: func(cmd *cobra.Command, args []string) {
+		list(args[0], args[1])
+	},
+}
+
 var describeCmd = &cobra.Command{
 	Use:   "describe [alias] [id]",
 	Short: "Shows details for an article",
@@ -34,6 +43,7 @@ var describeCmd = &cobra.Command{
 //Exec execute function for commands
 func Exec() {
 	rootCmd.AddCommand(lsaCmd)
+	rootCmd.AddCommand(lsCmd)
 	rootCmd.AddCommand(describeCmd)
 	err := rootCmd.Execute()
 	if err != nil {

@@ -1,7 +1,7 @@
 ![Go](https://github.com/waznico/atom-reader/workflows/Go/badge.svg?branch=master)
 
 # Atom Reader
-A simple Atom RSS reader as test project to fetch latest news of heise
+A simple Atom RSS reader as test project to fetch latest news of your favorite feeds.
 
 # Fundamentals
 This app uses spf13/cobra framework to create cli environment.
